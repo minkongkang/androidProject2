@@ -121,13 +121,13 @@ public class WeekFragment extends Fragment {
 
         for(int i=0; i <24  ;i++){
             dayList3.add(""+i);
-            dayList3.add("");
-            dayList3.add("");
-            dayList3.add("");
-            dayList3.add("");
-            dayList3.add("");
-            dayList3.add("");
-            dayList3.add("");
+            dayList3.add(" ");
+            dayList3.add(" ");
+            dayList3.add(" ");
+            dayList3.add(" ");
+            dayList3.add(" ");
+            dayList3.add(" ");
+            dayList3.add(" ");
         }
 //이번주 선택시 색 변경
         gridView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -150,8 +150,8 @@ public class WeekFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int position=i;
                 tv2 = (TextView) gridView2.getChildAt(position);
-                for (int j= 0; j < 112; j++) {
-                    gridView2.getChildAt(j).setBackgroundColor(Color.parseColor("#ffffff"));}
+                //for (int j= 0; j < 112; j++) {
+                    //gridView2.getChildAt(j).setBackgroundColor(Color.parseColor("#ffffff"));}
                 tv2.setBackgroundColor(Color.CYAN);
                 //tv2를 눌렀을때 맨위에 7일 모두 리셋뒤 해당하는 일수에 색 변경.
                 tv1 = (TextView) gridView1.getChildAt(position%8-1);
@@ -184,14 +184,13 @@ public class WeekFragment extends Fragment {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 tv2 = (TextView) super.getView(position, convertView, parent);
-                //tv2.setId(text1);
                 tv2.setBackgroundColor(Color.WHITE);
                 tv2.setTextSize(13);
 
                 //실행 되면 처음에는 1번째에 색이 세팅 됨.
                 //View view2 = super.getView(1,convertView,parent);
-                View view2 = super.getView((2),convertView,parent);
-                view2.setBackgroundColor(Color.CYAN);
+                //View view2 = super.getView((0),convertView,parent);
+               // view2.setBackgroundColor(Color.CYAN);
 
                 return tv2;
             }
