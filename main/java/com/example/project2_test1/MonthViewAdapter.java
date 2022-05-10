@@ -19,6 +19,7 @@ public class MonthViewAdapter extends FragmentStateAdapter {
     int now_month = Calendar.getInstance().get(Calendar.MONTH)+1 ;
     //int index = 52;
 
+
     @Override
     public Fragment createFragment(int position) {
         //int index = getRealPosition(position);
