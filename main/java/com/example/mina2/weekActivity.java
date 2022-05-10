@@ -39,7 +39,7 @@ public class weekActivity extends AppCompatActivity {
         ViewPager2 vpPager = findViewById(R.id.vpPager);
         FragmentStateAdapter adapter = new WeekFragmentAdapter(this);
         vpPager.setAdapter(adapter);
-        vpPager.setCurrentItem(1);
+        vpPager.setCurrentItem(3);
 
 
 

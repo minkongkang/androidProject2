@@ -129,37 +129,39 @@ public class WeekFragment extends Fragment {
             dayList3.add(" ");
             dayList3.add(" ");
         }
-//이번주 선택시 색 변경
+//시간 선택시 색 변경.
         gridView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int position=i;
-                tv1 = (TextView) gridView1.getChildAt(position);
+               // tv1 = (TextView) gridView1.getChildAt(position);
                 //7일 흰색으로 리셋
-                for (int k = 0; k < 7; k++) {
-                    gridView1.getChildAt(k).setBackgroundColor(Color.parseColor("#ffffff"));}
+               // for (int k = 0; k < 7; k++) {
+                //    gridView1.getChildAt(k).setBackgroundColor(Color.parseColor("#ffffff"));}
                 //해당 포지션 날짜 색변경
-                tv1.setBackgroundColor(Color.CYAN);
+                //tv1.setBackgroundColor(Color.CYAN);
                 //해당 날짜 토스트 메세지 출력
                 Toast.makeText(getActivity(),now_year+"/"+now_month+"/"+dayList2.get(i), Toast.LENGTH_SHORT).show();
             }
         });
-//시간 선택시 색 변경.
         gridView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int position=i;
-                tv2 = (TextView) gridView2.getChildAt(position);
-                //for (int j= 0; j < 112; j++) {
-                    //gridView2.getChildAt(j).setBackgroundColor(Color.parseColor("#ffffff"));}
+
+               /* tv2 = (TextView) gridView2.getChildAt(position);
+                for (int j= 0; j < 112; j++) {
+                    gridView2.getChildAt(j).setBackgroundColor(Color.parseColor("#ffffff"));}
                 tv2.setBackgroundColor(Color.CYAN);
                 //tv2를 눌렀을때 맨위에 7일 모두 리셋뒤 해당하는 일수에 색 변경.
                 tv1 = (TextView) gridView1.getChildAt(position%8-1);
                 for (int k = 0; k < 7; k++) {
                     gridView1.getChildAt(k).setBackgroundColor(Color.parseColor("#ffffff"));}
-                tv1.setBackgroundColor(Color.CYAN);
+                tv1.setBackgroundColor(Color.CYAN);*/
+
                 //클릭한 포지션 위치 토스트 메세지 출력
                 Toast.makeText(getActivity(),"position="+position, Toast.LENGTH_SHORT).show();
+
             }
         });
 
