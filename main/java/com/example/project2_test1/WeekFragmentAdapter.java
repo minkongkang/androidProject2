@@ -58,10 +58,12 @@ public class WeekFragmentAdapter extends FragmentStateAdapter {
             else{
                 WeekFragment week = new WeekFragment(year, months, weeks-position);
                 return week;
+
         }
         else if (position > index) {
             ++index;
             weeks++;
+
             if (weeks == 6) {
                 weeks=0;
                 months+=1;
@@ -70,20 +72,23 @@ public class WeekFragmentAdapter extends FragmentStateAdapter {
             }
             else {
             WeekFragment week = new WeekFragment(year, 5, 1);
+
                 return week;}
+
+
         else return null;*/
 
         Log.d("test", "createFragment: "+position+" "+weeks);
-        int index = 1;
+        int index = 3;
         if (position == index) {
-            WeekFragment week = new WeekFragment(now_year, months, weeks);
+            WeekFragment week = new WeekFragment(now_year, now_month, now_week);
             weeks=now_week;
             months=now_month;
             return week;
         }
         else if (position < index) {
-            index--;
-            weeks--;
+            --index;
+            --weeks;
             if(weeks == -1){
                 weeks=5;
                 months-=1;

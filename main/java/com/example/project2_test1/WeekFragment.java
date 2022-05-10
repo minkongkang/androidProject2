@@ -150,7 +150,8 @@ public class WeekFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int position=i;
-                tv2 = (TextView) gridView2.getChildAt(position);
+
+               /* tv2 = (TextView) gridView2.getChildAt(position);
                 for (int j= 0; j < 112; j++) {
                     gridView2.getChildAt(j).setBackgroundColor(Color.parseColor("#ffffff"));}
                 tv2.setBackgroundColor(Color.CYAN);
@@ -158,9 +159,11 @@ public class WeekFragment extends Fragment {
                 tv1 = (TextView) gridView1.getChildAt(position%8-1);
                 for (int k = 0; k < 7; k++) {
                     gridView1.getChildAt(k).setBackgroundColor(Color.parseColor("#ffffff"));}
-                tv1.setBackgroundColor(Color.CYAN);
+                tv1.setBackgroundColor(Color.CYAN);*/
+
                 //클릭한 포지션 위치 토스트 메세지 출력
                 Toast.makeText(getActivity(),"position="+position, Toast.LENGTH_SHORT).show();
+
             }
         });
 

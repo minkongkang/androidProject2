@@ -30,6 +30,7 @@ public class WeekActivity extends AppCompatActivity {
     int now_week;
     int day;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,24 +42,44 @@ public class WeekActivity extends AppCompatActivity {
         ViewPager2 vpPager = findViewById(R.id.vpPager);
         FragmentStateAdapter adapter = new WeekFragmentAdapter(this);
         vpPager.setAdapter(adapter);
-        vpPager.setCurrentItem(1);
+        vpPager.setCurrentItem(3);  //
+
+        now_year = Calendar.getInstance().get(Calendar.YEAR);
+        now_month = Calendar.getInstance().get(Calendar.MONTH) + 1;
+        now_week = Calendar.getInstance().get(Calendar.WEEK_OF_MONTH);
+        day = Calendar.getInstance().get(Calendar.DATE);
+
+        /*
+        int year = (position/12)+2018;
+        int month = position%12+1;
+
+        int count;
+        if(now_week==0)
+            count=0;
+        else if (now_week==1)
+            count=1;
+        else if (now_week==2)  */
 
 
+ //앱바
 
-        // 현재 연도, 월, 일 받기
-        Intent intent = getIntent();
-        now_year = intent.getIntExtra("year", -1);
-        now_month = intent.getIntExtra("month", -1);
-        now_week = intent.getIntExtra("week", -1);
-
-        if (now_year == -1 || now_month == -1) {
-            now_year = Calendar.getInstance().get(Calendar.YEAR);
-            now_month = Calendar.getInstance().get(Calendar.MONTH) + 1;
-            now_week = Calendar.getInstance().get(Calendar.WEEK_OF_MONTH);
-            day = Calendar.getInstance().get(Calendar.DATE);
-        }
         ActionBar ab = getSupportActionBar();
-        ab.setTitle(now_year + "년" + now_month + "월");
+        ab.setTitle((now_year)+ "년 " + now_month + "월");
+        //
+        vpPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                ActionBar ab = getSupportActionBar();
+                if(now_week<7)
+                   ab.setTitle(now_year+ "년 " + now_month + "월");
+                else if(now_week == 0){
+                   now_week=0;
+                   ab.setTitle(now_year+ "년 " + now_month+1 + "월");
+                   }
+                now_week+=1;
+    }
+});
+
 
 
     }
